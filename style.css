@@ -1,0 +1,301 @@
+/* Style for Marlon Clark portfolio */
+
+/********** General **********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #eee;
+}
+
+/********** Typography **********/
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.top-name {
+  font-weight: 300;
+  letter-spacing: 0.3em;
+}
+.link {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 0.75em;
+}
+
+.sub-banner {
+  font-size: 1.25rem;
+}
+.name {
+  font-weight: 500;
+  color: red;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h2,
+.badges p {
+  font-weight: 300;
+  color: #eee;
+}
+.fab {
+  font-size: 5em;
+}
+
+/********** Buttons **********/
+.btn {
+  padding: 0.8em 2em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px 2px 8px 2px;
+  background: #ff7878;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #ffa2a2;
+  box-shadow: 0 2px 5px #111;
+}
+
+/********** Layout **********/
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+nav,
+.links,
+header,
+.badges,
+.skills,
+.cards,
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+header,
+section {
+  height: 600px;
+  padding: 5em 2em;
+}
+section {
+  clip-path: polygon(0 0, 100% 4em, 100% 100%, 0% 100%);
+}
+h2 {
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+/********** Navigation **********/
+nav {
+  position: fixed;
+  max-width: 1000px;
+  padding: 0.5em;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+.smoked {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.page-name {
+  margin-bottom: 0.5em;
+}
+.links {
+  flex-flow: row;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-top: 1em;
+  z-index: 1000;
+}
+.links li {
+  width: 150px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: 0.2s;
+  padding: 0.25em 0.5em;
+}
+.link:hover {
+  color: #eee;
+  text-shadow: 0 4px 5px #000;
+}
+/* Todo: shrink on scroll */
+
+/********** Header **********/
+header {
+  background: rgb(3, 159, 84);
+  background: linear-gradient(
+    0deg,
+    rgba(3, 159, 84, 0) 0%,
+    rgba(3, 159, 84, 0.5) 25%,
+    rgba(165, 201, 255, 1) 100%
+  );
+  justify-content: space-evenly;
+}
+.hello {
+  margin-left: -7px;
+}
+.sub-banner {
+  text-align: center;
+}
+.cta {
+  margin: 0 auto;
+}
+
+/********** Talents **********/
+.talents {
+  background-color: gray;
+}
+.badges {
+  flex-flow: row;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.badge {
+  color: #eee;
+  transition: 1s;
+}
+.badges > div:hover .badge {
+  transform: rotateY(360deg);
+}
+.skills {
+  justify-content: space-around;
+  padding-top: 1em;
+}
+
+/********** Projects **********/
+.projects {
+  position: relative;
+  top: -4em;
+  height: 100%;
+  background-color: #128bb1;
+}
+.cards {
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+.card {
+  width: 90%;
+  padding: 0.4em;
+  background-color: mediumaquamarine;
+  margin: 0.5em;
+  border-radius: 13px 13px 13px 2px;
+  transition: 0.2s;
+}
+.hide {
+  display: none;
+}
+.proj-img {
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.proj-footer {
+  width: 100%;
+  padding: 0.5em;
+  text-align: center;
+}
+.view-more {
+  text-decoration: none;
+  color: #eee;
+}
+
+/********** About Me **********/
+.aboutme {
+  position: relative;
+  top: -8em;
+  background-color: #12b1a8;
+  clip-path: polygon(0 0, 100% 4em, 100% 100%, 0% calc(100% - 4em));
+}
+.info {
+  justify-content: space-around;
+  padding-top: 2em;
+}
+.credentials {
+}
+.social {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.6rem;
+  margin: 2em 1em 0em;
+}
+.social a {
+  color: #000;
+
+  transition-duration: 0.2s;
+}
+.social a:hover {
+  color: #fff;
+  text-shadow: 0 3px 5px rgba(20, 20, 20, 0.8);
+  transform: translateY(-5px);
+}
+
+/********** Footer **********/
+footer {
+  position: relative;
+  height: 50px;
+  text-align: center;
+}
+.footer-block {
+  background-color: gray;
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+}
+
+/********** Desktop Screens **********/
+@media (min-width: 600px) {
+  .link {
+    font-size: 1.5rem;
+  }
+  header,
+  .section {
+    padding: 5em;
+  }
+  header,
+  .skills,
+  .info {
+    flex-flow: row;
+  }
+  .hello {
+    font-size: 6rem;
+  }
+  .sub-banner {
+    font-size: 1.75rem;
+    text-align: left;
+  }
+  .card {
+    width: 45%;
+  }
+  .hide {
+    display: block;
+  }
+  .mission {
+    width: 50%;
+  }
+  .social {
+    font-size: 1rem;
+  }
+}
+/********** Project Card Expanded **********/
+@media (min-width: 850px) {
+  .card {
+    width: 30%;
+  }
+}
