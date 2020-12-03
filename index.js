@@ -2,8 +2,6 @@
 'use strict'
 
 const nav = document.querySelector('nav')
-const skillBars = document.querySelectorAll('.skill-bar')
-const skillArr = ['90%', '100%', '85%']
 
 window.addEventListener('scroll', function() {
     // Shrink nav bar
@@ -12,11 +10,16 @@ window.addEventListener('scroll', function() {
     } else {
         nav.classList.remove('scrolled')
     }
-    // Expand skill bars
-    if(scrollY > 400) {
-        skillBars.forEach(bar => {
-            bar.classList.add('grow')
-        })
-    }
-
 })
+
+const skillBarContainer = document.querySelector('.skill-bars')
+const skillBarArray = document.querySelectorAll('.skill-bar')
+
+let animateSkillBars = () => {
+    console.log('io working')
+    skillBarArray.forEach(bar => {
+        bar.classList.add('grow')
+    })
+}
+let io = new IntersectionObserver(animateSkillBars);
+io.observe(skillBarContainer)
