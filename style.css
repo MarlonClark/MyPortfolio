@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #eee;
 }
@@ -13,7 +16,7 @@ body {
 /********** Typography **********/
 * {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
 }
 .top-name {
   font-weight: 300;
@@ -35,7 +38,7 @@ h1 {
 }
 .name {
   font-weight: 500;
-  color: red;
+  letter-spacing: 0.3em;
 }
 h2 {
   font-size: 1.75rem;
@@ -51,6 +54,7 @@ h2,
 
 /********** Buttons **********/
 .btn {
+  margin: 0 auto;
   padding: 0.8em 2em;
   font-size: 0.9rem;
   font-weight: 600;
@@ -60,8 +64,9 @@ h2,
   transition: 0.2s;
 }
 .btn:hover {
-  background: #ffa2a2;
-  box-shadow: 0 2px 5px #111;
+  background: #ffacac;
+  box-shadow: 0 2px 5px rgba(1, 1, 1, 0.7);
+  transform: translateY(-5px);
 }
 
 /********** Layout **********/
@@ -75,19 +80,22 @@ h2,
 nav,
 .links,
 header,
+.cta,
 .badges,
 .skills,
+.skill-bars,
 .cards,
-.info {
+.info,
+.social {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-flow: column;
 }
 header,
 section {
-  height: 600px;
+  min-height: 600px;
   padding: 5em 2em;
 }
 section {
@@ -106,18 +114,21 @@ nav {
   z-index: 100;
   backdrop-filter: blur(5px);
 }
-.smoked {
-  background-color: rgba(255, 255, 255, 0.1);
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.2);
 }
-.page-name {
+.page-top {
   margin-bottom: 0.5em;
+}
+.scrolled .links {
+  padding-top: 0;
 }
 .links {
   flex-flow: row;
-  justify-content: space-around;
   list-style-type: none;
   padding-top: 1em;
   z-index: 1000;
+  transition: padding ease 0.5s;
 }
 .links li {
   width: 150px;
@@ -149,11 +160,15 @@ header {
 .hello {
   margin-left: -7px;
 }
+.name {
+  color: #eee;
+  background: #333;
+  padding-left: 0.25em;
+  border-radius: 3px;
+}
+
 .sub-banner {
   text-align: center;
-}
-.cta {
-  margin: 0 auto;
 }
 
 /********** Talents **********/
@@ -162,10 +177,10 @@ header {
 }
 .badges {
   flex-flow: row;
-  justify-content: space-around;
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 2em;
 }
 .badge {
   color: #eee;
@@ -174,16 +189,54 @@ header {
 .badges > div:hover .badge {
   transform: rotateY(360deg);
 }
-.skills {
-  justify-content: space-around;
-  padding-top: 1em;
+.skill-bars {
+  width: 100%;
+  border-radius: 3px;
+  background-color: #bbb;
+  align-items: flex-start;
+  padding: 1em;
+}
+.skill-bars p {
+  border-radius: 3px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+.js {
+  max-width: 90%;
+  background-color: #ece800;
+}
+.html {
+  max-width: 100%;
+  background-color: #ff5050;
+}
+.css {
+  max-width: 85%;
+  background-color: #2196f3;
+}
+.grow {
+  animation: grow 2s ease forwards;
+}
+
+.skill-description {
+  padding: 1em;
+}
+.skills-other {
+  padding-left: 2em;
+}
+/* Skills animation */
+@keyframes grow {
+  10% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 /********** Projects **********/
 .projects {
   position: relative;
   top: -4em;
-  height: 100%;
   background-color: #128bb1;
 }
 .cards {
@@ -222,21 +275,16 @@ header {
   background-color: #12b1a8;
   clip-path: polygon(0 0, 100% 4em, 100% 100%, 0% calc(100% - 4em));
 }
-.info {
-  justify-content: space-around;
-  padding-top: 2em;
-}
-.credentials {
+.aboutme div {
+  padding: 1em;
 }
 .social {
-  display: flex;
-  justify-content: space-around;
+  flex-flow: row;
   font-size: 0.6rem;
   margin: 2em 1em 0em;
 }
 .social a {
   color: #000;
-
   transition-duration: 0.2s;
 }
 .social a:hover {
@@ -280,6 +328,10 @@ footer {
     font-size: 1.75rem;
     text-align: left;
   }
+  .skill-bars,
+  .skill-description {
+    width: 50%;
+  }
   .card {
     width: 45%;
   }
@@ -290,7 +342,7 @@ footer {
     width: 50%;
   }
   .social {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 /********** Project Card Expanded **********/

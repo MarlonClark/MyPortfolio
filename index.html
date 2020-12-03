@@ -18,18 +18,18 @@
             </div>
             <ul class="links">
                 <li>
-                    <a class="link" href="#">talents</a>
+                    <a class="link" href="#talents">talents</a>
                 </li>
                 <li>
-                    <a class="link" href="#">projects</a>
+                    <a class="link" href="#projects">projects</a>
                 </li>
                 <li>
-                    <a class="link" href="#">about me</a>
+                    <a class="link" href="#aboutme">about me</a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Landing Page -->
+        <!-- Page Header -->
         <header>
             <div class="greeting">
                 <h1 class="hello">HELLO</h1>
@@ -44,7 +44,7 @@
         </header>
 
         <!-- Talents -->
-        <section class="talents">
+        <section class="talents" id="talents">
             <h2>TALENTS</h2>
             <div class="badges">
                 <div>
@@ -67,21 +67,26 @@
                 </div>
             </div>
             <div class="skills">
-                <div>
-                    <ul class="skill-list">
-                        <li>skill 12345</li>
-                        <li>skill 12345</li>
-                        <li>skill 12345</li>
-                        <li>skill 12345</li>
-                        <li>skill 12345</li>
-                    </ul>
+                <div class="skill-bars">
+                    <p>KNOWLEDGE</p>
+                    <p class="skill-bar js">JavaScript</p>
+                    <p class="skill-bar html">HTML</p>
+                    <p class="skill-bar css">CSS</p>
                 </div>
-                <div class="skill-description">Some words about my skills...</div>
+                <div class="skill-description">
+                    <p>Continuously learning! Other skills include:
+                        <ul class="skills-other">
+                            <li>jQuery</li>
+                            <li>Bootstrap</li>
+                            <li>Python</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- Projects -->
-        <section class="projects">
+        <section class="projects" id="projects">
             <h2>PROJECTS</h2>
             <div class="cards">
                 <div class="card">
@@ -121,20 +126,26 @@
         </section>
 
         <!-- About Me -->
-        <section class="aboutme">
+        <section class="aboutme" id="aboutme">
             <h2>ABOUT ME</h2>
             <div class="info">
                 <div class="mission">
-                    <p>I have wanted a career change for a long time...</p>
+                    <p>Served twenty years in the US Army performing signals intelligence (SIGINT),
+                        however, my passion is for web development. I simply want to create things and
+                        help others create things.
+                    </p>
                 </div>
                 <div class="credentials">
                     <ul>
-                        <li>Degree</li>
-                        <li>experience</li>
-                        <li>self tought</li>
+                        <li>BS in Digital Media &amp; Web Technology</li>
+                        <li>Top Secret Clearance (TS/SCI) w/ Poly</li>
+                        <li>Extensive Self-Instruction</li>
                         <li>scrimba</li>
                     </ul>
                 </div>
+            </div>
+            <div class="cta">
+                <button class="btn">CONTACT ME</button>
             </div>
             <div class="social">
                 <a href="#"><i class="fab fa-linkedin"></i></a>
