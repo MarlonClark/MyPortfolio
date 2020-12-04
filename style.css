@@ -48,6 +48,9 @@ h2,
   font-weight: 300;
   color: #eee;
 }
+.card-desc {
+  font-weight: 300;
+}
 .fab {
   font-size: 5em;
 }
@@ -251,6 +254,9 @@ header {
   border-radius: 13px 13px 13px 2px;
   transition: 0.2s;
 }
+.card-desc {
+  min-height: 3.5em;
+}
 .hide {
   display: none;
 }
@@ -258,6 +264,19 @@ header {
   max-width: 100%;
   border-radius: 10px 10px 0 0;
 }
+.proj-img-link:hover .overlay {
+  opacity: 1;
+  transition: opacity ease 0.5s;
+}
+.overlay {
+  position: absolute;
+  background: rgba(10, 10, 10, 0.3);
+  color: #eee;
+  padding: 0.25em;
+  border-radius: 10px 2px 2px 2px;
+  opacity: 0;
+}
+
 .proj-footer {
   width: 100%;
   padding: 0.5em;

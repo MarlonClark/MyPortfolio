@@ -16,7 +16,6 @@ const skillBarContainer = document.querySelector('.skill-bars')
 const skillBarArray = document.querySelectorAll('.skill-bar')
 
 let animateSkillBars = () => {
-    console.log('io working')
     skillBarArray.forEach(bar => {
         bar.classList.add('grow')
     })
