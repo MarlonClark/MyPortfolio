@@ -6,17 +6,20 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --primary-color: #128bb1;
+  --primary-color-light: #00c3ff;
+  --main-shadow: 0 2px 5px rgba(1, 1, 1, 0.7);
+}
 html {
   scroll-behavior: smooth;
-}
-body {
-  background-color: #eee;
 }
 
 /********** Typography **********/
 * {
+  font-size: 1.2rem;
+  font-weight: 300;
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
 }
 .top-name {
   font-weight: 300;
@@ -28,31 +31,36 @@ body {
   font-weight: 500;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
-  line-height: 0.75em;
-}
-
-.sub-banner {
-  font-size: 1.25rem;
-}
-.name {
-  font-weight: 500;
-  letter-spacing: 0.3em;
+  line-height: 0.8em;
 }
 h2 {
   font-size: 1.75rem;
 }
+.badge {
+  font-size: 1em;
+}
 h2,
 .badges p {
   font-weight: 300;
-  color: #eee;
 }
-.card-desc {
+.skill-bars {
+  font-size: 1.5rem;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.card-desc,
+.view-more.btn {
   font-weight: 300;
 }
-.fab {
-  font-size: 5em;
+.badge .fab {
+  font-size: 5rem;
+}
+.social .fab {
+  font-size: 3rem;
 }
 
 /********** Buttons **********/
@@ -61,21 +69,28 @@ h2,
   padding: 0.8em 2em;
   font-size: 0.9rem;
   font-weight: 600;
+  color: #fff;
   border: 0;
-  border-radius: 8px 2px 8px 2px;
-  background: #ff7878;
+  border-radius: 10px 2px 10px 2px;
+  background: var(--primary-color);
   transition: 0.2s;
 }
-.btn:hover {
-  background: #ffacac;
-  box-shadow: 0 2px 5px rgba(1, 1, 1, 0.7);
+.btn:hover,
+.btn:focus {
+  color: #111;
+  background: var(--primary-color-light);
+  box-shadow: var(--main-shadow);
   transform: translateY(-5px);
+  outline: none;
+}
+.btn:active {
+  box-shadow: none;
 }
 
 /********** Layout **********/
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -99,11 +114,9 @@ header,
 header,
 section {
   min-height: 600px;
-  padding: 5em 2em;
+  padding: 7em 2em;
 }
-section {
-  clip-path: polygon(0 0, 100% 4em, 100% 100%, 0% 100%);
-}
+
 h2 {
   padding-bottom: 1em;
   text-align: center;
@@ -112,7 +125,7 @@ h2 {
 /********** Navigation **********/
 nav {
   position: fixed;
-  max-width: 1000px;
+  max-width: 1300px;
   padding: 0.5em;
   z-index: 100;
   backdrop-filter: blur(5px);
@@ -144,39 +157,27 @@ nav {
   padding: 0.25em 0.5em;
 }
 .link:hover {
-  color: #eee;
-  text-shadow: 0 4px 5px #000;
+  color: #fff;
+  background: var(--primary-color);
+  border-radius: 3px;
+  box-shadow: 0 3px 5px #000;
 }
 /* Todo: shrink on scroll */
 
 /********** Header **********/
 header {
-  background: rgb(3, 159, 84);
-  background: linear-gradient(
-    0deg,
-    rgba(3, 159, 84, 0) 0%,
-    rgba(3, 159, 84, 0.5) 25%,
-    rgba(165, 201, 255, 1) 100%
-  );
   justify-content: space-evenly;
 }
-.hello {
-  margin-left: -7px;
-}
-.name {
-  color: #eee;
-  background: #333;
-  padding-left: 0.25em;
-  border-radius: 3px;
-}
-
-.sub-banner {
+.headline {
+  width: 100%;
   text-align: center;
+  margin-bottom: 0.15em;
 }
 
 /********** Talents **********/
 .talents {
-  background-color: gray;
+  color: #fff;
+  background-color: var(--primary-color);
 }
 .badges {
   flex-flow: row;
@@ -186,38 +187,40 @@ header {
   padding-bottom: 2em;
 }
 .badge {
-  color: #eee;
   transition: 1s;
+  text-shadow: var(--main-shadow);
 }
 .badges > div:hover .badge {
   transform: rotateY(360deg);
 }
+.badge-header {
+  color: #111;
+  margin-bottom: 0.25em;
+}
 .skill-bars {
   width: 100%;
   border-radius: 3px;
-  background-color: #bbb;
+  background-color: #fff;
   align-items: flex-start;
   padding: 1em;
+  box-shadow: inset var(--main-shadow);
 }
 .skill-bars p {
+  background: #222 url(assets/big-favorite-star-svgrepo-com.svg);
   border-radius: 3px;
-  padding: 0.5em;
   margin-bottom: 0.5em;
 }
 .js {
   max-width: 90%;
-  background-color: #ece800;
 }
 .html {
   max-width: 100%;
-  background-color: #ff5050;
 }
 .css {
   max-width: 85%;
-  background-color: #2196f3;
 }
 .grow {
-  animation: grow 2s ease forwards;
+  animation: grow 2.5s ease forwards;
 }
 
 .skill-description {
@@ -237,11 +240,6 @@ header {
 }
 
 /********** Projects **********/
-.projects {
-  position: relative;
-  top: -4em;
-  background-color: #128bb1;
-}
 .cards {
   flex-flow: row wrap;
   margin: 0 auto;
@@ -249,11 +247,13 @@ header {
 .card {
   width: 90%;
   padding: 0.4em;
-  background-color: mediumaquamarine;
+  background-color: var(--primary-color);
   margin: 0.5em;
   border-radius: 13px 13px 13px 2px;
   transition: 0.2s;
+  color: #fff;
 }
+
 .card-desc {
   min-height: 3.5em;
 }
@@ -276,23 +276,18 @@ header {
   border-radius: 10px 2px 2px 2px;
   opacity: 0;
 }
-
 .proj-footer {
   width: 100%;
-  padding: 0.5em;
+  padding: 3em 0 0;
   text-align: center;
 }
-.view-more {
+.view-more.btn {
   text-decoration: none;
-  color: #eee;
 }
 
 /********** About Me **********/
 .aboutme {
-  position: relative;
-  top: -8em;
-  background-color: #12b1a8;
-  clip-path: polygon(0 0, 100% 4em, 100% 100%, 0% calc(100% - 4em));
+  background-color: var(--primary-color);
 }
 .aboutme div {
   padding: 1em;
@@ -300,7 +295,7 @@ header {
 .social {
   flex-flow: row;
   font-size: 0.6rem;
-  margin: 2em 1em 0em;
+  margin-top: 2em;
 }
 .social a {
   color: #000;
@@ -308,21 +303,20 @@ header {
 }
 .social a:hover {
   color: #fff;
-  text-shadow: 0 3px 5px rgba(20, 20, 20, 0.8);
+  text-shadow: var(--main-shadow);
   transform: translateY(-5px);
 }
 
 /********** Footer **********/
 footer {
-  position: relative;
-  height: 50px;
+  background-color: #bbb;
+  padding-top: 10em;
   text-align: center;
 }
 .footer-block {
-  background-color: gray;
-  position: absolute;
+  background-color: #111;
   width: 100%;
-  height: 30px;
+  height: 2em;
   bottom: 0;
 }
 
@@ -335,17 +329,15 @@ footer {
   .section {
     padding: 5em;
   }
-  header,
   .skills,
   .info {
     flex-flow: row;
   }
-  .hello {
-    font-size: 6rem;
+  .headline {
+    font-size: 5rem;
   }
-  .sub-banner {
-    font-size: 1.75rem;
-    text-align: left;
+  .badge .fab {
+    font-size: 5em;
   }
   .skill-bars,
   .skill-description {
@@ -360,8 +352,8 @@ footer {
   .mission {
     width: 50%;
   }
-  .social {
-    font-size: 0.8rem;
+  .social .fab {
+    font-size: 4rem;
   }
 }
 /********** Project Card Expanded **********/

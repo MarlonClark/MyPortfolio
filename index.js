@@ -5,7 +5,7 @@ const nav = document.querySelector('nav')
 
 window.addEventListener('scroll', function() {
     // Shrink nav bar
-    if(scrollY > 200) {
+    if(scrollY > 100) {
         nav.classList.add('scrolled')
     } else {
         nav.classList.remove('scrolled')
