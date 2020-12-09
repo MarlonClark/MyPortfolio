@@ -9,7 +9,7 @@
 :root {
   --primary-color: #128bb1;
   --primary-color-light: #00c3ff;
-  --main-shadow: 0 2px 5px rgba(1, 1, 1, 0.7);
+  --main-shadow: 0 2px 4px rgba(1, 1, 1, 0.5);
 }
 html {
   scroll-behavior: smooth;
@@ -25,7 +25,7 @@ html {
   font-weight: 300;
   letter-spacing: 0.3em;
 }
-.link {
+.nav-link {
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 500;
@@ -107,7 +107,7 @@ h2,
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 nav,
-.links,
+.nav-links,
 header,
 .cta,
 .badges,
@@ -150,33 +150,32 @@ nav {
 .page-top {
   margin-bottom: 0.5em;
 }
-.scrolled .links {
+.scrolled .nav-links {
   padding-top: 0;
 }
-.links {
+.nav-links {
   flex-flow: row;
   list-style-type: none;
   padding-top: 1em;
   z-index: 1000;
   transition: padding ease 0.5s;
 }
-.links li {
+.nav-links li {
   width: 150px;
   text-align: center;
+  border-bottom: 3px solid #111;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), 0 calc(100% - 5px));
+  transition: clip-path ease 0.5s;
 }
-.link {
+.nav-links li:hover {
+  border-bottom: 3px solid #111;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.nav-link {
   text-decoration: none;
-  color: #000;
+  color: #111;
   transition: 0.2s;
-  padding: 0.25em 0.5em;
 }
-.link:hover {
-  color: #fff;
-  background: var(--primary-color);
-  border-radius: 3px;
-  box-shadow: 0 3px 5px #000;
-}
-/* Todo: shrink on scroll */
 
 /********** Header **********/
 header {
@@ -202,8 +201,9 @@ header {
   padding-bottom: 2em;
 }
 .badge {
-  transition: 1s;
-  text-shadow: var(--main-shadow);
+  height: 4em;
+  transition: transform 1s;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.2));
 }
 .badges > div:hover .badge {
   transform: rotateY(360deg);
@@ -292,6 +292,10 @@ header {
   border-radius: 10px 2px 2px 2px;
   opacity: 0;
 }
+.overlay img {
+  height: 1.2em;
+  vertical-align: middle;
+}
 .proj-footer {
   width: 100%;
   padding: 3em 0 0;
@@ -326,13 +330,14 @@ h2.light,
   font-size: 0.6rem;
   margin-top: 2em;
 }
+.social-logo {
+  height: 3em;
+}
 .social a {
-  color: #111;
   transition-duration: 0.2s;
 }
 .social a:hover {
-  color: #fff;
-  text-shadow: var(--main-shadow);
+  filter: drop-shadow(var(--main-shadow));
   transform: translateY(-5px);
 }
 
@@ -375,7 +380,7 @@ footer {
 
 /********** Desktop Screens **********/
 @media (min-width: 600px) {
-  .link {
+  .nav-link {
     font-size: 1.5rem;
   }
   header,
@@ -392,8 +397,8 @@ footer {
   .headline {
     font-size: 5rem;
   }
-  .badge .fab {
-    font-size: 5em;
+  .badge {
+    height: 5em;
   }
   .skill-bars,
   .skill-description {
@@ -411,8 +416,8 @@ footer {
   .credentials {
     width: 45%;
   }
-  .social .fab {
-    font-size: 4rem;
+  .social-logo {
+    height: 4.5em;
   }
 }
 /********** Project Card Expanded **********/
