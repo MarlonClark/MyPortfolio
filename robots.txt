@@ -1,0 +1,4 @@
+# Group 1
+User-agent: *
+Disallow: /fontawesome-free-5.15.1-web/
+Disallow: /assets/
