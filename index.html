@@ -36,13 +36,13 @@
                 <h2>Helping to create awesome websites!</h2>
             </div>
             <div class="cta">
-                <button class="btn">CONTACT ME</button>
+                <a href="#contact" class="btn">CONTACT ME</a>
             </div>
         </header>
 
         <!-- Talents -->
         <section class="talents" id="talents">
-            <h2 class="badge-header">TALENTS</h2>
+            <h2 class="section-title">TALENTS</h2>
             <div class="badges">
                 <div>
                     <div class="badge">
@@ -65,14 +65,14 @@
             </div>
             <div class="skills">
                 <div class="skill-bars">
-                    <h3>KNOWLEDGE</h3>
+                    <h3 class="skills-bar-title">KNOWLEDGE</h3>
                     <p class="skill-bar js">JavaScript</p>
                     <p class="skill-bar html">HTML5</p>
                     <p class="skill-bar css">CSS3</p>
                 </div>
                 <div class="skill-description">
                     <p>Continuously learning! Other skills include:
-                        <ul class="skills-other">
+                        <ul class="skills-list">
                             <li>jQuery</li>
                             <li>Bootstrap</li>
                             <li>Figma</li>
@@ -86,7 +86,7 @@
 
         <!-- Projects -->
         <section class="projects" id="projects">
-            <h2>PROJECTS</h2>
+            <h2  class="section-title">PROJECTS</h2>
             <div class="cards">
                 <div class="card">
                     <a href="https://codepen.io/marz0008/pen/zYxpKEO" target="_blank" class="proj-img-link">
@@ -98,7 +98,7 @@
                     
                 </div>
                 <div class="card">
-                    <a href="#" class="proj-img-link">
+                    <a href="https://codepen.io/marz0008/pen/LYNgydb" target="_blank" class="proj-img-link">
                         <div class="overlay"><i class="fas fa-eye"></i> View code</div>
                         <img class="proj-img" src="img/Screenshot-2020-12-03-162733.webp" alt="Classic snake computer game">
                     </a>
@@ -106,7 +106,7 @@
                     <p class="card-desc">A recreation of the Snake game. Used CSS grid to build the game area and snake.</p>
                 </div>
                 <div class="card">
-                    <a href="#" class="proj-img-link">
+                    <a href="https://codepen.io/marz0008/pen/RwapQBO" target="_blank" class="proj-img-link">
                         <div class="overlay"><i class="fas fa-eye"></i> View code</div>
                         <img class="proj-img" src="img/Screenshot-2020-10-30-155904.webp" alt="Empty window of a word counter">
                     </a>
@@ -114,7 +114,7 @@
                     <p class="card-desc">A tool to count individual word occurrence in a body of text using regular expressions.</p>
                 </div>
                 <div class="card">
-                    <a href="#" class="proj-img-link">
+                    <a href="https://codepen.io/marz0008/pen/XWJVXRv" target="_blank" class="proj-img-link">
                         <div class="overlay"><i class="fas fa-eye"></i> View code</div>
                         <img class="proj-img" src="img/Screenshot-2020-12-03-163324.webp" alt="dark rectangle with the word fizzbuzz">
                     </a>
@@ -130,7 +130,7 @@
                     <p class="card-desc">A game using pseudo-AI to play against a human player.</p>
                 </div>
                 <div class="card hide">
-                    <a href="#" class="proj-img-link">
+                    <a href="https://codepen.io/marz0008/pen/WNbXGgW" target="_blank" class="proj-img-link">
                         <div class="overlay"><i class="fas fa-eye"></i> View code</div>
                         <img class="proj-img" src="img/Screenshot-2020-10-30-160823.webp" alt="Microsoft desktop and calculator">
                     </a>
@@ -139,13 +139,13 @@
                 </div>
             </div>
             <div class="proj-footer">
-                <a href="#" class="view-more btn">View More</a>
-            </div>
+                <a href="https://codepen.io/marz0008" target="_blank" class="view-more btn">View More</a>
+            </div>`
         </section>
 
         <!-- About Me -->
         <section class="aboutme" id="aboutme">
-            <h2>ABOUT ME</h2>
+            <h2  class="section-title light">ABOUT ME</h2>
             <div class="info">
                 <div class="mission">
                     <p>Served twenty years in the US Army performing signals intelligence (SIGINT),
@@ -154,7 +154,7 @@
                     </p>
                 </div>
                 <div class="credentials">
-                    <ul>
+                    <ul class="cred-list">
                         <li>BS in Digital Media &amp; Web Technology</li>
                         <li>Top Secret Clearance (TS/SCI) w/ Poly</li>
                         <li>Extensive Self-Instruction</li>
@@ -163,14 +163,36 @@
                 </div>
             </div>
             <div class="cta">
-                <button class="btn">CONTACT ME</button>
+                <a href="#contact" class="btn">CONTACT ME</a>
             </div>
             <div class="social">
                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MarlonClark" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-codepen"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact" id="contact">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="form-container">
+                <form action="action.php" id="contact-form">
+              
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required placeholder="Your name..">
+              
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required placeholder="Your email..">
+              
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required placeholder="Write something.." style="height:200px"></textarea>
+              
+                  <input class="btn" type="submit" value="Submit">
+              
+                </form>
+            </div>
+            
         </section>
 
         <!-- Footer -->

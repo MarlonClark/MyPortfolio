@@ -45,8 +45,9 @@ h2,
 .badges p {
   font-weight: 300;
 }
-.skill-bars {
-  font-size: 1.5rem;
+.skill-bar {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .card-title {
   font-size: 1.2rem;
@@ -55,6 +56,12 @@ h2,
 .card-desc,
 .view-more.btn {
   font-weight: 300;
+}
+.card-desc {
+  font-size: 1rem;
+}
+.mission {
+  line-height: 1.5;
 }
 .badge .fab {
   font-size: 5rem;
@@ -70,18 +77,22 @@ h2,
   font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
+  text-decoration: none;
   border: 0;
   border-radius: 10px 2px 10px 2px;
   background: var(--primary-color);
   transition: 0.2s;
 }
-.btn:hover,
-.btn:focus {
+.btn:hover {
   color: #111;
   background: var(--primary-color-light);
   box-shadow: var(--main-shadow);
   transform: translateY(-5px);
   outline: none;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px #111;
 }
 .btn:active {
   box-shadow: none;
@@ -116,7 +127,9 @@ section {
   min-height: 600px;
   padding: 7em 2em;
 }
-
+.section-title {
+  margin-bottom: 1em;
+}
 h2 {
   padding-bottom: 1em;
   text-align: center;
@@ -129,6 +142,7 @@ nav {
   padding: 0.5em;
   z-index: 100;
   backdrop-filter: blur(5px);
+  top: 0;
 }
 .scrolled {
   background-color: rgba(255, 255, 255, 0.2);
@@ -167,6 +181,7 @@ nav {
 /********** Header **********/
 header {
   justify-content: space-evenly;
+  margin-top: 2em;
 }
 .headline {
   width: 100%;
@@ -193,7 +208,7 @@ header {
 .badges > div:hover .badge {
   transform: rotateY(360deg);
 }
-.badge-header {
+.skills-bar-title {
   color: #111;
   margin-bottom: 0.25em;
 }
@@ -205,8 +220,9 @@ header {
   padding: 1em;
   box-shadow: inset var(--main-shadow);
 }
-.skill-bars p {
-  background: #222 url(assets/big-favorite-star-svgrepo-com.svg);
+.skill-bar {
+  color: #111;
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   margin-bottom: 0.5em;
 }
@@ -222,11 +238,11 @@ header {
 .grow {
   animation: grow 2.5s ease forwards;
 }
-
 .skill-description {
   padding: 1em;
 }
-.skills-other {
+.skills-list {
+  list-style-image: url(assets/right-chevron.svg);
   padding-left: 2em;
 }
 /* Skills animation */
@@ -281,9 +297,6 @@ header {
   padding: 3em 0 0;
   text-align: center;
 }
-.view-more.btn {
-  text-decoration: none;
-}
 
 /********** About Me **********/
 .aboutme {
@@ -292,19 +305,59 @@ header {
 .aboutme div {
   padding: 1em;
 }
+h2.light,
+.info {
+  color: #fff;
+}
+.info {
+  align-items: flex-start;
+}
+.aboutme .cta .btn {
+  border: 2px solid #fff;
+}
+.credentials {
+  width: 100%;
+}
+.cred-list {
+  list-style-image: url(assets/right-chevron.svg);
+}
 .social {
   flex-flow: row;
   font-size: 0.6rem;
   margin-top: 2em;
 }
 .social a {
-  color: #000;
+  color: #111;
   transition-duration: 0.2s;
 }
 .social a:hover {
   color: #fff;
   text-shadow: var(--main-shadow);
   transform: translateY(-5px);
+}
+
+/********** Contact **********/
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type="submit"] {
+  align-self: center;
 }
 
 /********** Footer **********/
@@ -329,6 +382,9 @@ footer {
   .section {
     padding: 5em;
   }
+  header {
+    margin-top: 3em;
+  }
   .skills,
   .info {
     flex-flow: row;
@@ -350,7 +406,10 @@ footer {
     display: block;
   }
   .mission {
-    width: 50%;
+    width: 55%;
+  }
+  .credentials {
+    width: 45%;
   }
   .social .fab {
     font-size: 4rem;
