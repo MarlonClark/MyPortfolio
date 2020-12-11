@@ -25,7 +25,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             skillBarArray.forEach(bar => {
                 bar.classList.add('grow')
-                console.log('grow added')
             })
         }
     })

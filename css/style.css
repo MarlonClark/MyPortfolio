@@ -251,7 +251,7 @@ header {
   animation: grow-bg 2.5s ease forwards;
 }
 .skill-description {
-  padding: 1em;
+  padding: 0 1em;
 }
 .skills-list,
 .cred-list {
