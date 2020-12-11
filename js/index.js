@@ -15,13 +15,23 @@ window.addEventListener('scroll', function() {
 // ============== Animate skill bars with observer ============== 
 const skillBarContainer = document.querySelector('.skill-bars')
 const skillBarArray = document.querySelectorAll('.skill-bar')
-let animateSkillBars = () => {
-    skillBarArray.forEach(bar => {
-        bar.classList.add('grow')
+const options = {
+    root: null,
+    rootMargin: "0px 0px -50px 0px",
+    threshold: 1
+  };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            skillBarArray.forEach(bar => {
+                bar.classList.add('grow')
+                console.log('grow added')
+            })
+        }
     })
-}
-let io = new IntersectionObserver(animateSkillBars)
-io.observe(skillBarContainer)
+}, options)
+
+observer.observe(skillBarContainer)
 
 // ============== Contact Form (Formspree code) ==============
 window.addEventListener("DOMContentLoaded", function() {

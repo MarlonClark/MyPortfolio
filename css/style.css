@@ -208,6 +208,9 @@ header {
 .badges > div:hover .badge {
   transform: rotateY(360deg);
 }
+.skills {
+  align-items: flex-start;
+}
 .skills-bar-title {
   color: #111;
   margin-bottom: 0.25em;
@@ -221,22 +224,31 @@ header {
   box-shadow: inset var(--main-shadow);
 }
 .skill-bar {
+  width: 100%;
   color: #111;
-  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   margin-bottom: 0.5em;
+  background-position: 100%;
+  background-size: 200%;
+}
+.skill-name {
+  padding-left: 0.25em;
+}
+.skill-percent {
+  float: right;
+  padding-right: 0.25em;
 }
 .js {
-  max-width: 90%;
+  background-image: linear-gradient(90deg, var(--primary-color) 45%, #bbb 0);
 }
 .html {
-  max-width: 100%;
+  background-image: linear-gradient(90deg, var(--primary-color) 50%, #bbb 0);
 }
 .css {
-  max-width: 85%;
+  background-image: linear-gradient(90deg, var(--primary-color) 40%, #bbb 0);
 }
 .grow {
-  animation: grow 2.5s ease forwards;
+  animation: grow-bg 2.5s ease forwards;
 }
 .skill-description {
   padding: 1em;
@@ -246,13 +258,13 @@ header {
   list-style-image: url(../img/icons/right-chevron.svg);
   padding-left: 2em;
 }
-/* Skills animation */
-@keyframes grow {
-  10% {
-    width: 10%;
+/* Skill bar animation */
+@keyframes grow-bg {
+  0% {
+    background-position: 100%;
   }
   100% {
-    width: 100%;
+    background-position: 0%;
   }
 }
 
@@ -307,21 +319,22 @@ header {
 .aboutme {
   background-color: var(--primary-color);
 }
-.aboutme div {
-  padding: 1em;
-}
 h2.light,
 .info {
   color: #fff;
 }
 .info {
   align-items: flex-start;
+  width: 100%;
 }
 .aboutme .cta .btn {
   border: 2px solid #fff;
+  margin: 3em 0;
 }
+.mission,
 .credentials {
   width: 100%;
+  padding: 1em 0;
 }
 .social {
   flex-flow: row;
@@ -329,7 +342,7 @@ h2.light,
   margin-top: 2em;
 }
 .social-logo {
-  height: 3em;
+  height: 2.5em;
 }
 .social a {
   transition-duration: 0.2s;
@@ -363,13 +376,9 @@ input[type="submit"] {
   align-self: center;
 }
 #form-status {
-  /* position: relative; */
   color: green;
   font-weight: 400;
   margin-left: 0.5em;
-  /* transform: translateX(-100px); */
-}
-.show-success {
 }
 
 /********** Footer **********/
